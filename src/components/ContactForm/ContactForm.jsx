@@ -17,7 +17,7 @@ const contactSchema = Yup.object().shape({
         .required("Sorry! Name is required"),
     number: Yup
         .string()
-        .matches(/^\d{3}-\d{2}-\d{2}$/, 'Sorry! The phone number format is XXX-XX-XX')
+        .matches(/^\d{3}-\d{3}-\d{4}$/, 'Sorry! The phone number format is XXX-XXX-XXXX')
         .required("Sorry! Phone number is required")
 });
 
@@ -32,7 +32,7 @@ const ContactForm = () => {
     const numberFieldId = useId();
 
     const handleSubmit = (values, actions) => {
-        dispatch(addContact({ ...values, id: nanoid() }));
+        dispatch(addContact(values));
         actions.resetForm();
     };
 

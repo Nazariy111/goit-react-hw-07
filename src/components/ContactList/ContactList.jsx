@@ -11,11 +11,8 @@ const ContactList = () => {
     return (
         <div >
             <ul className={css.contactList}>
-                {visibleContacts && Array.isArray(visibleContacts) &&
-                    visibleContacts.length > 0 &&
-                    visibleContacts.map((contact) => {
-                        return <Contact key={contact.id} contact={contact} />;
-                    })}
+                {visibleContacts && Array.isArray(visibleContacts) && visibleContacts.length > 0 &&
+                    visibleContacts.map((contact) => { return <Contact key={contact.id} contact={contact} />; })}
             </ul>
         </div>
     )
